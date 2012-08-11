@@ -11,7 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810215934) do
+ActiveRecord::Schema.define(:version => 20120811174500) do
+
+  create_table "hashtags", :force => true do |t|
+    t.string   "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "hashtags", ["text"], :name => "index_hashtags_on_text", :unique => true
+
+  create_table "hashtags_tweets", :id => false, :force => true do |t|
+    t.integer "hashtag_id"
+    t.integer "tweet_id"
+  end
+
+  add_index "hashtags_tweets", ["hashtag_id", "tweet_id"], :name => "index_hashtags_tweets_on_hashtag_id_and_tweet_id", :unique => true
+
+  create_table "links", :force => true do |t|
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "links", ["url"], :name => "index_links_on_url", :unique => true
+
+  create_table "links_tweets", :id => false, :force => true do |t|
+    t.integer "link_id"
+    t.integer "tweet_id"
+  end
+
+  add_index "links_tweets", ["link_id", "tweet_id"], :name => "index_links_tweets_on_link_id_and_tweet_id", :unique => true
+
+  create_table "tweets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tweets", ["user_id"], :name => "index_tweets_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "uid"

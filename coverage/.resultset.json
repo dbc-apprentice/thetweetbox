@@ -53,6 +53,21 @@
         null
       ],
       "/Users/apprentice/Desktop/thetweetbox/app/models/user.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         null,
@@ -68,8 +83,26 @@
         null,
         null,
         null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/models/hashtag.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/models/link.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/models/tweet.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1344702282
+    "timestamp": 1344703473
   }
 }
