@@ -19,6 +19,7 @@ group :development, :test do
   gem 'spork', '0.9.0'
   gem 'faker'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 # Gems used only for assets and not required
