@@ -4,13 +4,72 @@
       "/Users/apprentice/Desktop/thetweetbox/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/apprentice/Desktop/thetweetbox/app/helpers/application_helper.rb": [
         1,
         null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/thetweetbox/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1344633725
+    "timestamp": 1344702282
   }
 }
