@@ -22,8 +22,8 @@ describe User do
     context 'with OmniAuth' do
       let :auth_response do
         { "uid" => (1..8).collect { rand(10) }.join,
-          "info" => { "name"      => "Super Name",
-                      "nickname"  => "Super NickName",
+          "info" => { "name"      => "Team TweetBox",
+                      "nickname"  => "TheTweetBox",
                       "image"     => "image.com/eoiru"  },
           "credentials" => { "token" => (0...20).map{97.+(rand(25)).chr}.join,
                              "secret" => (0...30).map{97.+(rand(25)).chr}.join }
