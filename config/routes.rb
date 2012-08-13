@@ -18,6 +18,6 @@ Thetweetbox::Application.routes.draw do
   get "/auth/twitter/callback" => "sessions#create"
   get "/:twitter_name" => "users#show", :as => 'user'
   get "/signout" => "sessions#destroy", :as => :signout
-
+  get "/users/show" => "users#show"
 end
 
