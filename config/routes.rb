@@ -17,8 +17,7 @@ Thetweetbox::Application.routes.draw do
   resources :users, except: [:show]
   get "/auth/twitter/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
-  get "/:twitter_name" => "users#show", :as => "user"
-  get "/users/show" => "users#show"
+  get "/:twitter_name" => "users#show", :as => 'user'
 
 end
 

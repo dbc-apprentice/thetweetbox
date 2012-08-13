@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find(:first, :conditions => ["lower(twitter_name) =?", params[:twitter_name].downcase])
+    @tweets = @user.tweets.order("created_at ASC")
   end
 end

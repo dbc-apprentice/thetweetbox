@@ -4,7 +4,7 @@ module TwitterClient
     #returns only tweets with urls
     def get_tweets(user)
       tweets = get_user_tweets(user)
-      tweets.reject { |tweet| tweet["entities"]["urls"].empty? }
+      tweets.reject! { |tweet| tweet["entities"]["urls"].empty? }
       tweets.each do |tweet|
          unless Tweet.find_by_twitter_id(tweet["id"].to_i)
            #save tweet in database
