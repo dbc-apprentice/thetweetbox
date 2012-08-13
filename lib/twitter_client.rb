@@ -3,9 +3,7 @@ module TwitterClient
     
     #get tweets for all users
     def get_users_tweets
-      User.all.each do |user|
-        get_tweets(user)
-      end
+      User.all.each { |user| get_tweets(user) }
     end
     
     #get tweets for a specified user
