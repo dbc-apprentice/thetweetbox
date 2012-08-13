@@ -1,7 +1,20 @@
 - if current_user
+  .row
+    .three.columns
+      = image_tag "tweetboxlogo.png"
+    .five.columns.end
+      %h1 the tweetbox
+      %h4 tweet inside the box
   Welcome #{current_user.name}!
   = image_tag current_user.image_url
   = link_to "Sign Out", signout_path
 - else
+  .row
+    .three.columns
+      = image_tag "tweetboxlogo.png"
+    .five.columns.end
+      %h1 the tweetbox
+      %h4 tweet inside the box
   = link_to "Sign in with Twitter", "/auth/twitter"
+
 
