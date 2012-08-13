@@ -4,6 +4,7 @@ gem 'rails', '3.2.7'
 gem 'pg', '0.14.0'
 gem 'omniauth-twitter'
 gem 'twitter_oauth', '~> 0.4.3'
+gem 'haml', '3.1.6'
 
 
 group :development, :test do
@@ -27,7 +28,6 @@ end
 group :assets do
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
-  gem 'haml', '3.1.6'
   gem 'uglifier', '1.2.7'
   gem 'compass-rails', '~> 1.0.3'
   gem 'zurb-foundation', '~> 3.0.1'
