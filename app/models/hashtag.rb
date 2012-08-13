@@ -11,13 +11,5 @@
 class Hashtag < ActiveRecord::Base
   attr_accessible :text
   has_and_belongs_to_many :tweets
-
-  def self.create_from_tweet(twitter_hashtag)
-    hashtag = Hashtag.new
-    hashtag.tweets = [twitter_hashtag[:tweet]]
-    unless Hashtag.find_by_text(twitter_hashtag["text"])
-      hashtag.text = twitter_hashtag["text"]
-    end
-    hashtag.save
-  end
+  validates_uniqueness_of :text
 end
