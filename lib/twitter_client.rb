@@ -5,6 +5,10 @@ module TwitterClient
     def get_tweets_with_urls(user)
       tweets = get_user_tweets(user)
       tweets.reject { |tweet| tweet["entities"]["urls"].empty? }
+      tweets.each do |tweet|
+         tweet[:user] = user
+         Tweet.create_from_twitter(tweet)
+      end
     end
 
     private

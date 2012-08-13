@@ -30,27 +30,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.get_user_tweets_with_urls(user)
-    tweets = TwitterClient.get_tweets_with_urls(user)
-
-    # client = TwitterOAuth::Client.new(
-    #             :consumer_key => ENV['TWITTER_KEY'],
-    #             :consumer_secret => ENV['TWITTER_SECRET'],
-    #             :token => user[:auth_token],
-    #             :secret => user[:auth_secret]
-    #             )
-    #
-    #  tweets = client.user_timeline(
-    #              "include_entities" => true,
-    #              "include_rts" => true,
-    #              "screen_name" => "#{user[:twitter_name]}",
-    #              "count" => 200
-    #               )
-    #
-     tweets.each do |tweet|
-       tweet["user"] = user
-       Tweet.create_from_twitter(tweet)
-     end
-  end
-
 end

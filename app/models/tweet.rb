@@ -20,7 +20,7 @@ class Tweet < ActiveRecord::Base
     unless twitter_tweet["entities"]["urls"].empty?
       unless Tweet.find_by_twitter_id(twitter_tweet["id"].to_i)
         last_tweet = create! do |tweet|
-          tweet.user = twitter_tweet["user"]
+          tweet.user = twitter_tweet[:user]
           tweet.twitter_id = twitter_tweet["id"].to_i
           tweet.text = CGI.escape(twitter_tweet["text"])
         end
