@@ -1,10 +1,12 @@
 = image_tag @user.image_url
-
-- @tweets.each do |tweet|
-  %br
-  = CGI.unescape(tweet.text)
-  - tweet.links.each do |link|
-    = link.url
+.tweetandtag_container
+  - @tweets.each do |tweet|
     %br
-  - tweet.hashtags.each do |hashtag|
-    = hashtag.text
+    .tweets
+      = CGI.unescape(tweet.text)
+      - tweet.links.each do |link|
+        = link.url
+        %br
+    - tweet.hashtags.each do |hashtag|
+      .tags
+        = hashtag.text

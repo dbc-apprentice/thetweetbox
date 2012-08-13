@@ -42,3 +42,31 @@ h4 {
     display: inline-blocks;
     margin-bottom:5px;
 }
+
+.tweetandtag_container{
+    width: 500px;
+}
+.tags {
+    font-family:sans-serif;
+    font-style:bold;
+    padding: 3px;
+    margin: 10px;
+    border: 1px solid #282828;
+    width: 100px;
+    color: white;
+    background-color:gray;
+    float:right;
+
+}
+
+.tweets {
+    padding: 4px;
+    margin: 2px;
+    font-family: georgia;
+    font-size:24px;
+    font-style:bold;
+    background-color:#33FFFF;
+    color:white;
+    border: 3px solid #33FFFF;
+    width: 450px;
+}
