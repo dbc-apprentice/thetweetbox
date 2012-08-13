@@ -15,7 +15,7 @@ module TwitterClient
 
             #save hashtag in database
             tweet["entities"]["hashtags"].each do |hashtag|
-              new_tag = Hashtag.find_or_create_by_text(hashtag['text'])
+              new_tag = Hashtag.find_or_create_by_text(hashtag['text'].downcase)
               new_tag.tweets << new_tweet
             end
 

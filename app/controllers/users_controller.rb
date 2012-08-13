@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @hashtags = Hashtag.all
+    @hashtags = Hashtag.all(:order => "RANDOM()")
   end
 
   def show
