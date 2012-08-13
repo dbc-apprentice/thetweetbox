@@ -1,3 +1,44 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    margin-top:100px;
+    font-size:50px;
+    font-family: sans-serif;
+}
+
+h4 {
+    font-family: georgia;
+    font-style:italic;
+    float:right;
+    margin-top:-20px;
+}
+
+//.box {
+//    width:220px;
+//
+//
+//    margin:0px;
+//
+//}
+#container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.box {
+    border:5px solid gray;
+    padding:20px;
+    margin: 5px 0px;
+    float: left;
+    -moz-box-shadow: 5px 5px 5px #777777;
+    -webkit-b-x-shadow: 5px 5px 5px #777777;
+    box-shadow: 5px 5px 5px #777777;
+}
+
+.row {
+    padding: 20px;
+}
+
+.label {
+    font-size:300%;
+    display: inline-blocks;
+    margin-bottom:5px;
+}

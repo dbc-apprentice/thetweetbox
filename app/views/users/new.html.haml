@@ -2,3 +2,23 @@
   = "Welcome #{current_user.twitter_name}!"
 -else
   = link_to "Sign In With Twitter", "/auth/twitter"
+
+.row
+  .three.columns
+    = image_tag "tweetboxlogo.png"
+  .five.columns.end
+    %h1 the tweetbox
+    %h4 tweet inside the box
+#container
+  - @hashtags.each do |hashtag|
+    -unless hashtag.text.nil?
+      .box
+        .label
+          ="\##{hashtag.text}"
+        .photos
+          -user_images = []
+          -hashtag.tweets.each do |tweet|
+            -unless user_images.include?(tweet.user.image_url)
+              -user_images << tweet.user.image_url
+              =image_tag tweet.user.image_url
+
