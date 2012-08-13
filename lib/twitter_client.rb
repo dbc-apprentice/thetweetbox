@@ -1,7 +1,14 @@
 module TwitterClient
   class << self
-
-    #returns only tweets with urls
+    
+    #get tweets for all users
+    def get_users_tweets
+      User.all.each do |user|
+        get_tweets(user)
+      end
+    end
+    
+    #get tweets for a specified user
     def get_tweets(user)
       tweets = get_user_tweets(user)
       tweets.reject! { |tweet| tweet["entities"]["urls"].empty? }
