@@ -1,12 +1,24 @@
-= image_tag @user.image_url
-.tweetandtag_container
-  - @tweets.each do |tweet|
-    %br
-    .tweets
-      = CGI.unescape(tweet.text)
-      - tweet.links.each do |link|
-        = link.url
-        %br
-    - tweet.hashtags.each do |hashtag|
-      .tags
-        = hashtag.text
+.showpage_container
+  .tag_container
+    = image_tag @user.image_url
+    - user_tweets = []
+    - @tweets.each do |tweet|
+      - tweet.hashtags.each do |hashtag|
+        - unless user_tweets.include?(hashtag.text)
+          - user_tweets << hashtag.text
+          %br
+          .tags_left
+            = hashtag.text.upcase
+
+  .tweetandtag_container
+    - @tweets.each do |tweet|
+      %br
+      .tweets
+        = CGI.unescape(tweet.text)
+        - tweet.links.each do |link|
+          = link.url
+          %br
+      - tweet.hashtags.each do |hashtag|
+        .tags
+          = hashtag.text.upcase
+
