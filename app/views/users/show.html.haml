@@ -19,13 +19,6 @@
           %br
           .tags_left
             = link_to hashtag.text.upcase, 'http://www.google.com' #thetweetbox/username/tag
-    -# - @tweets.each do |tweet|
-    -#   - tweet.links.each do |link|
-    -#     - unless user_urls.include?(link.url)
-    -#       - user_url << link.url
-    -#       %br
-    -#       .url_right
-    -#         = link_to link.url.upcase, 'http://www.google.com' #thetweetbox/username/tag
   .center_column
     - @tweets.each do |tweet|
       %br
@@ -37,9 +30,6 @@
       - tweet.hashtags.each do |hashtag|
         .tags
           = hashtag.text.upcase
-      - tweet.links.each do |link|
-        .urls
-          = link.url
 .right_column
   - @tweets.each do |tweet|
     - tweet.links.each do |link|
