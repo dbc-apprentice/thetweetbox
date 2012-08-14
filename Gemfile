@@ -5,6 +5,7 @@ gem 'pg', '0.14.0'
 gem 'omniauth-twitter'
 gem 'twitter_oauth', '~> 0.4.3'
 gem 'haml', '3.1.6'
+gem 'kaminari'
 
 
 group :development, :test do
