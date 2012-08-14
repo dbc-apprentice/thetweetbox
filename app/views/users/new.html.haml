@@ -1,7 +1,4 @@
-- if current_user
-  = "Welcome #{current_user.twitter_name}!"
--else
-  = link_to "Sign In With Twitter", "/auth/twitter"
+
 
 .row
   .three.columns
@@ -21,3 +18,7 @@
             -unless user_images.include?(tweet.user.image_url)
               -user_images << tweet.user.image_url
               =image_tag tweet.user.image_url
+- if current_user
+  = "Welcome #{current_user.twitter_name}!"
+-else
+  = link_to "Sign In With Twitter", "/auth/twitter"

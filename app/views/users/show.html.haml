@@ -1,8 +1,12 @@
-.showpage_container
-  .header
-    = "the tweetbox"
-    -# = "#{current_user.twitter_name}'s TweetBox"
-  .tag_container
+.header
+  .twitter_handle
+    ="@" + @user.twitter_name + "'s"
+
+  .inner_header
+    = "tweetbox"
+.left_center_container
+  .left_column
+
     .photo
       = image_tag @user.image_url
       = image_tag @user.image_url
@@ -17,14 +21,8 @@
           %br
           .tags_left
             = link_to hashtag.text.upcase, 'http://www.google.com' #thetweetbox/username/tag
-    - @tweets.each do |tweet|
-      - tweet.links.each do |link|
-        - unless user_urls.include?(link.url)
-          - user_url << link.url
-          %br
-          .tags_left
-            = link_to link.url.upcase, 'http://www.google.com' #thetweetbox/username/tag
-  .tweetwithtag_container
+  .center_column
+
     - @tweets.each do |tweet|
       %br
       .tweets
@@ -35,8 +33,14 @@
       - tweet.hashtags.each do |hashtag|
         .tags
           = hashtag.text.upcase
-      - tweet.links.each do |link|
-        .urls
-          = link.url
+.right_column
+  - @tweets.each do |tweet|
+    - tweet.links.each do |link|
+      - unless user_urls.include?(link.url)
+        - user_url << link.url
+        %br
+        .urls_right
+          = link_to link.url.downcase, link.url, :target => "_blank" #thetweetbox/username/tag
+
 
 
