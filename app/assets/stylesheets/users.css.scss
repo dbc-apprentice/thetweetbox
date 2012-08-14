@@ -44,32 +44,6 @@ h4 {
 }
 
 //HERE IS WHERE KENDRA STARTED WORKING
-<<<<<<< HEAD
-.showpage_container {
-    width:900px;
-    margin-right:auto;
-    margin-left:auto;
-    border: 2px solid gray;
-}
-.header {
-    height:100px;
-    padding:20px;
-    color:gray;
-    border:2px solid gray;
-}
-
-.tag_container {
-    border:2px solid gray;
-}
-
-.tweetwithtag_container {
-    border:2px solid gray;
-}
-
-.photo {
-    border:2px solid gray;
-}
-=======
 
 body {
     width: 900px;
@@ -203,8 +177,11 @@ body {
     box-shadow: 10px 10px 5px #888;
 }
 
->>>>>>> css
+.button {
+    width:150px;
+    margin:5px;
 
+}
 .tags {}
 
 .urls {
