@@ -1,6 +1,7 @@
 .header
   .twitter_handle
-    ="@#{current_user.twitter_name}'s"
+    ="@" + @user.twitter_name + "'s"
+
   .inner_header
     = "tweetbox"
 .left_center_container
@@ -37,6 +38,6 @@
         - user_url << link.url
         %br
         .urls_right
-          = link_to link.url.downcase, 'http://www.google.com' #thetweetbox/username/tag
+          = link_to link.url.downcase, link.url, :target => "_blank" #thetweetbox/username/tag
 
 
