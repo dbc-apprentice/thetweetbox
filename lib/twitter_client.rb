@@ -5,30 +5,14 @@ module TwitterClient
     def get_users_tweets
       User.all.each { |user| get_tweets(user) }
     end
-    
+        
     #get tweets for a specified user
     def get_tweets(user)
-      tweets = get_user_tweets(user)
-      tweets.reject! { |tweet| tweet["entities"]["urls"].empty? }
-      tweets.each do |tweet|
+      tweets_with_url(user).each do |tweet|
          unless Tweet.find_by_twitter_id(tweet["id"].to_i)
-           #save tweet in database
-           new_tweet = Tweet.create(:user => user,
-                          :twitter_id => tweet["id"].to_i,
-                          :text => CGI.escape(tweet["text"])
-                          )
-
-            #save hashtag in database
-            tweet["entities"]["hashtags"].each do |hashtag|
-              new_tag = Hashtag.find_or_create_by_text(hashtag['text'].downcase)
-              new_tag.tweets << new_tweet
-            end
-
-            #save link in database
-            tweet["entities"]["urls"].each do |url|
-              new_url = Link.find_or_create_by_url(url["expanded_url"])
-              new_url.tweets << new_tweet
-            end
+           new_tweet = create_new_tweet(tweet: tweet, user: user)
+           create_new_hashtags(tweet: tweet, new_tweet: new_tweet)
+           create_new_links(tweet: tweet, new_tweet: new_tweet)
          end
       end
     end
@@ -54,5 +38,35 @@ module TwitterClient
                    "count" => 200
                     )
     end
+    
+    #returns only tweets with urls for the specified user
+    def tweets_with_url(user)
+      tweets = get_user_tweets(user)
+      tweets.reject { |tweet| tweet["entities"]["urls"].empty? }
+    end
+    
+    def create_new_tweet(options = {})
+      Tweet.create(:user => options[:user],
+                   :twitter_id => options[:tweet]["id"].to_i,
+                   :text => CGI.escape(options[:tweet]["text"])
+      )
+    end
+    
+    def create_new_hashtags(options = {})
+      #save hashtags in database
+      options[:tweet]["entities"]["hashtags"].each do |hashtag|
+        new_tag = Hashtag.find_or_create_by_text(hashtag['text'].downcase)
+        new_tag.tweets << options[:new_tweet]
+      end
+    end
+    
+    def create_new_links(options = {})
+      #save link in database
+      options[:tweet]["entities"]["urls"].each do |url|
+        new_url = Link.find_or_create_by_url(url["expanded_url"])
+        new_url.tweets << options[:new_tweet]
+      end
+    end
+    
   end
 end
