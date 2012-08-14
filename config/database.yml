@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: thetweetbox_development
   pool: 5
-  username: David
+  username: nataliamurashev
   password:
   host: localhost
 
@@ -44,7 +44,7 @@ test:
   encoding: unicode
   database: thetweetbox_test
   pool: 5
-  username: David
+  username: nataliamurashev
   password:
   host: localhost
 
@@ -53,6 +53,6 @@ production:
   encoding: unicode
   database: thetweetbox_production
   pool: 5
-  username: David
+  username: nataliamurashev
   password:
   host: localhost

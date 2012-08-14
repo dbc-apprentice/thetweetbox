@@ -11,8 +11,9 @@ module TwitterClient
       tweets_with_url(user).each do |tweet|
          unless Tweet.find_by_twitter_id(tweet["id"].to_i)
            new_tweet = create_new_tweet(tweet: tweet, user: user)
-           create_new_hashtags(tweet: tweet, new_tweet: new_tweet)
-           create_new_links(tweet: tweet, new_tweet: new_tweet)
+           options = {tweet_entities: tweet['entities'], new_tweet: new_tweet}
+           create_new_hashtags(options)
+           create_new_links(options)
          end
       end
     end
@@ -54,7 +55,7 @@ module TwitterClient
     
     def create_new_hashtags(options = {})
       #save hashtags in database
-      options[:tweet]["entities"]["hashtags"].each do |hashtag|
+      options[:tweet_entities]["hashtags"].each do |hashtag|
         new_tag = Hashtag.find_or_create_by_text(hashtag['text'].downcase)
         new_tag.tweets << options[:new_tweet]
       end
@@ -62,7 +63,7 @@ module TwitterClient
     
     def create_new_links(options = {})
       #save link in database
-      options[:tweet]["entities"]["urls"].each do |url|
+      options[:tweet_entities]["urls"].each do |url|
         new_url = Link.find_or_create_by_url(url["expanded_url"])
         new_url.tweets << options[:new_tweet]
       end
