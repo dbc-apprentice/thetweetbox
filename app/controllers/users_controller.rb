@@ -7,5 +7,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(:first, :conditions => ["lower(twitter_name) =?", params[:twitter_name].downcase])
     @tweets = @user.tweets.order("created_at ASC")
+    hashtags = []
+    @user.tweets.each do |tweet|
+      tweet.hashtags.each do |hashtag|
+        hashtags << hashtag.text unless hashtags.include?(hashtag.text)
+      end
+    end
+    @hashtags = hashtags.sort
+    puts "$" * 100
+    puts @hashtags.inspect
   end
 end

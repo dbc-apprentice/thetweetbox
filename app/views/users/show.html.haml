@@ -1,46 +1,32 @@
-.header
-  .twitter_handle
-    ="@" + @user.twitter_name + "'s"
+.body
+  .header
+    .twitter_handle
+      ="@" + @user.twitter_name + "'s"
 
-  .inner_header
-    = "tweetbox"
-.left_center_container
-  .left_column
+    .inner_header
+      = "tweetbox"
+    - if current_user
+      = "Welcome #{current_user.twitter_name}!"
+    -else
+      = link_to "Sign In With Twitter", "/auth/twitter"
+  .left_center_container
+    .left_column
 
-    .photo
-      = image_tag @user.image_url
-      = image_tag @user.image_url
-      = image_tag @user.image_url
-      = image_tag @user.image_url
-    - user_tweets = []
-    - user_urls = []
-    - @tweets.each do |tweet|
-      - tweet.hashtags.each do |hashtag|
-        - unless user_tweets.include?(hashtag.text)
-          - user_tweets << hashtag.text
-          %br
-          .button
-            = link_to hashtag.text.upcase, 'http://www.google.com' #thetweetbox/username/tag
-  .center_column
+      .photo
+        = image_tag @user.image_url
+        = image_tag @user.image_url
+        = image_tag @user.image_url
+        = image_tag @user.image_url
+      - user_tweets = []
+      - user_urls = []
+      - @hashtags.each do |hashtag|
+        .button
+          = link_to hashtag.upcase, 'http://www.google.com' #thetweetbox/username/tag
+    .center_column
+      - @tweets.each do |tweet|
+        .tweets
+          = link_to CGI.unescape(tweet.text), tweet.links.first.url
+        - tweet.hashtags.each do |hashtag|
+          .tags.label.round
+            = hashtag.text.upcase
 
-    - @tweets.each do |tweet|
-      %br
-      .tweets
-        = CGI.unescape(tweet.text)
-        - tweet.links.each do |link|
-          = link.url
-          %br
-      - tweet.hashtags.each do |hashtag|
-        .tags
-          = hashtag.text.upcase
--# .right_column
--#   - @tweets.each do |tweet|
--#     - tweet.links.each do |link|
--#       - unless user_urls.include?(link.url)
--#         - user_url << link.url
--#         %br
--#         .urls_right
--#           = link_to link.url.downcase, link.url, :target => "_blank" #thetweetbox/username/tag
--#
--#
--#

@@ -17,11 +17,7 @@ development:
   encoding: unicode
   database: thetweetbox_development
   pool: 5
-<<<<<<< HEAD
-  username: nataliamurashev
-=======
   username: apprentice
->>>>>>> css
   password:
   host: localhost
 
@@ -48,11 +44,7 @@ test:
   encoding: unicode
   database: thetweetbox_test
   pool: 5
-<<<<<<< HEAD
-  username: nataliamurashev
-=======
   username: apprentice
->>>>>>> css
   password:
   host: localhost
 
@@ -61,10 +53,6 @@ production:
   encoding: unicode
   database: thetweetbox_production
   pool: 5
-<<<<<<< HEAD
-  username: nataliamurashev
-=======
   username: apprentice
->>>>>>> css
   password:
   host: localhost
