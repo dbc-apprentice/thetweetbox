@@ -42,26 +42,55 @@ h4 {
     display: inline-blocks;
     margin-bottom:5px;
 }
+//HERE IS WHERE KENDRA STARTED WORKING
+.showpage_body{
+//    background-image:url('http://i.imgur.com/J39VP.jpg');
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-attachment:fixed;
+}
 
 .showpage_container{
     width:900px;
     margin-right: auto;
     margin-left: auto;
-    border: 2px solid #009966;
+//    border: 2px solid #009966;
+
+}
+
+.header {
+    margin-top:20px;
+    color: #669999;
+    height:100px;
+    font-family:sans-serif;
+    font-size:50px;
+    text-align: center;
+    font-style:italic;
+    font-weight:bold;
+    border: 2px solid #006699;
+    background-color:white;
+}
+.inner_header {
+    background-color: #006699;
 }
 .tag_container {
     width:150px;
     float:left;
-//    background-color: #663300;
     margin:10px;
 }
 .tweetandtag_container{
     width: 500px;
     margin-right: auto;
+    margin-left:auto;
+//    border: 2px solid #006699;
+}
+.tweet_container {
+    width: 800px;
+    margin-right: auto;
     margin-left: auto;
     border: 2px solid #006699;
-
 }
+//tags on tweets
 .tags {
     font-family:"Verdana", sans-serif;
     font-weight:bold;
@@ -69,7 +98,6 @@ h4 {
     padding: 3px;
     margin: 10px;
     border: 1px solid #585858;
-    width: 10   0px;
     color: white;
     background-color:gray;
     float:right;
@@ -79,10 +107,10 @@ h4 {
 .tweets {
     padding: 4px;
     margin: 2px;
-    font-family: georgia;
-    font-size:24px;
-//    font-weight:bold;
-    background-color:#99FFFF;
+    font-family: sans-serif;
+    font-size:18px;
+//    background-color:#99FFFF;
+    background-color: white;
     color:gray;
     border: 3px solid #33FFFF;
     width: 450px;
@@ -97,16 +125,27 @@ h4 {
 
 .tags_left {
     font-family:"Verdana", sans-serif;
-    font-weight:bold;
-    font-size: 14;
-    padding: 3px;
-    border: 1px solid #585858;
+//    font-weight:bold;
+    font-size: 20px;
+    padding: 7px;
+    border: 2px solid white;
+    text-decoration:none;
     color: white;
-    background-color:gray;
-
+    background-color: gray;
+    text-align:right;
 }
 
-
+a:link, a:visited, a:hover, a:active, a:focus {
+    color: white;
+}
+.photo {
+    margin:10px;
+    padding:5px;
+    width:115px;
+    text-align: center;
+//    background-color: gray;
+    border: 2px solid white;
+}
 
 
 
