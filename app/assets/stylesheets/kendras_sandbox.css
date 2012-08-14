@@ -107,8 +107,61 @@ a:link, a:visited, a:hover, a:active, a:focus {
 
 
 
+/* KENDRA SECOND ATTEMPT*/
 
+.showpage_container {
+    width:900px;
+    margin-right:auto;
+    margin-left:auto;
+    border: 2px solid gray;
+}
+.header {
+    height:100px;
+    padding:20px;
+    color:gray;
+    border:2px solid gray;
+}
 
+.tag_container {
+    border:2px solid gray;
+}
+
+.tweetwithtag_container {
+    border:2px solid gray;
+}
+
+.photo {
+    border:2px solid gray;
+}
+
+.tags {}
+
+.urls {
+//    color:red;
+}
+.tags_left {
+    font-family:"Verdana", sans-serif;
+//    font-weight:bold;
+    font-size: 20px;
+    padding: 7px;
+    border: 2px solid white;
+    text-decoration:none;
+    color: white;
+    background-color: gray;
+    text-align:right;
+}
+.urls_right {
+    font-family:"Verdana", sans-serif;
+//    font-weight:bold;
+    font-size: 20px;
+    padding: 7px;
+    border: 2px solid white;
+    text-decoration:none;
+    color: white;
+    background-color: gray;
+    text-align:right;
+
+}
 
 
 
