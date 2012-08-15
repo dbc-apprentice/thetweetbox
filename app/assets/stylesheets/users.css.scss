@@ -18,12 +18,18 @@ h4 {
 }
 
 .box {
-    border:5px solid gray;
-    padding:10px;
-    margin: 5px 5px 5px 5px;
-    -moz-box-shadow: 5px 5px 5px #777777;
-    -webkit-b-x-shadow: 5px 5px 5px #777777;
-    box-shadow: 5px 5px 5px #777777;
+    border:1px solid gray;
+    padding:15px;
+    margin: 5px 1px 0px 1px;
+    border-radius: 10px ;
+    -moz-border-radius: 10px;
+    -webkit-b-x-shadow: 5px 5px 5px maroon;
+    box-shadow: 1px 1px 1px #7EB3CD;
+    
+}
+.box:hover{
+    border:3px solid #7EB3CD;
+    box-shadow: 5px 5px 5px #7EB3CD;
 }
 
 .row {
@@ -31,7 +37,7 @@ h4 {
 }
 
 .label {
-    font-size:300%;
+    font-size:250%;
     display: inline-blocks;
     margin-bottom:5px;
 }
