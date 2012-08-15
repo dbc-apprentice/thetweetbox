@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.masonry
+//= require jquery.infinitescroll
 //= require foundation
 //= require foundation/app
 //= require_tree .

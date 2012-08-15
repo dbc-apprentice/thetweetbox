@@ -1,5 +1,4 @@
 
-
 .row
   .three.columns
     = image_tag "tweetboxlogo.png"
@@ -22,3 +21,6 @@
   = "Welcome #{current_user.twitter_name}!"
 -else
   = link_to "Sign In With Twitter", "/auth/twitter"
+  
+%nav#page-nav
+  %a{href: '/users/new?page=2'}
