@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(:first, :conditions => ["lower(twitter_name) =?", params[:twitter_name].downcase])
-    @tweets = @user.tweets.order("created_at ASC").scoped.page(params[:page]).per(50)
+    @tweets = @user.tweets.order("twitter_id DESC").scoped.page(params[:page]).per(50)
     hashtags = []
     @user.tweets.each do |tweet|
       tweet.hashtags.each do |hashtag|
