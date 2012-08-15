@@ -22,7 +22,7 @@
       - user_urls = []
       - @hashtags.each do |hashtag, num|
         .button
-          = link_to "#{hashtag.upcase} (#{num})", 'http://www.google.com' #thetweetbox/username/tag
+          = link_to "\##{hashtag.upcase} (#{num})", 'http://www.google.com' #thetweetbox/username/tag
     .center_column
       #container
         - @tweets.each do |tweet|
