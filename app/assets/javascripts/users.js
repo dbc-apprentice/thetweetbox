@@ -50,5 +50,10 @@ $(function(){
       $container.masonry( 'appended', $newElems, true );
     }
   );
+
+	    $(".tweets a").each(function() {
+	        var contents = $(this).html();
+	        $(this).html(contents.replace(/\#([^\s]*)/g, "<span class=\"label\">#$1</span>"));
+	    });
   
 });
