@@ -24,11 +24,12 @@
         .button
           = link_to "#{hashtag.upcase} (#{num})", 'http://www.google.com' #thetweetbox/username/tag
     .center_column
-      - @tweets.each do |tweet|
-        .tweets.clearfix
-          = link_to CGI.unescape(tweet.text), tweet.links.first.url
-          .tags
-            - tweet.hashtags.each do |hashtag|
-              .label.round
-                = hashtag.text.upcase
+      #container
+        - @tweets.each do |tweet|
+          .box
+            .tweets.clearfix
+              = link_to CGI.unescape(tweet.text), tweet.links.first.url
+                
+%nav#page-nav
+  %a{href: "/#{@user.twitter_name}?page=2"}                
 
