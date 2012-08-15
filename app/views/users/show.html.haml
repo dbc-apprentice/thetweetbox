@@ -20,9 +20,9 @@
         = image_tag @user.image_url
       - user_tweets = []
       - user_urls = []
-      - @hashtags.each do |hashtag|
+      - @hashtags.each do |hashtag, num|
         .button
-          = link_to hashtag.upcase, 'http://www.google.com' #thetweetbox/username/tag
+          = link_to "#{hashtag.upcase} (#{num})", 'http://www.google.com' #thetweetbox/username/tag
     .center_column
       - @tweets.each do |tweet|
         .tweets.clearfix
