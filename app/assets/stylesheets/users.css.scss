@@ -20,7 +20,7 @@ h4 {
 .box {
     border:1px solid gray;
     padding:15px;
-    margin: 5px 1px 5px 1px;
+    margin: 5px 1px 10px 1px;
     border-radius: 10px ;
     -moz-border-radius: 10px;
     -webkit-b-x-shadow: 5px 5px 5px maroon;
@@ -30,6 +30,7 @@ h4 {
 .box:hover{
     border:3px solid #7EB3CD;
     box-shadow: 5px 5px 5px #7EB3CD;
+    padding-right: 5px;
 }
 
 .row {
