@@ -5,10 +5,11 @@
 
     .inner_header
       = "tweetbox"
-    - if current_user
-      = "Welcome #{current_user.twitter_name}!"
-    -else
-      = link_to "Sign In With Twitter", "/auth/twitter"
+    .welcome
+      - if current_user
+        = "Welcome #{current_user.twitter_name}!"
+      -else
+        = link_to "Sign In With Twitter", "/auth/twitter"
   .left_center_container
     .left_column
 
@@ -24,9 +25,10 @@
           = link_to hashtag.upcase, 'http://www.google.com' #thetweetbox/username/tag
     .center_column
       - @tweets.each do |tweet|
-        .tweets
+        .tweets.clearfix
           = link_to CGI.unescape(tweet.text), tweet.links.first.url
-        - tweet.hashtags.each do |hashtag|
-          .tags.label.round
-            = hashtag.text.upcase
+          .tags
+            - tweet.hashtags.each do |hashtag|
+              .label.round
+                = hashtag.text.upcase
 

@@ -73,7 +73,7 @@ h4 {
     /*height: 80px;*/
     margin-right:auto;
     margin-left:auto;
-    background-color:gray;
+    background-color:#2BA6CB;
     color: white;
     text-align:center;
     font-family: 'Lato', sans-serif;
@@ -101,22 +101,26 @@ h4 {
     }
 
 .center_column{
-    width:650px;
+    width:700px;
 //    border:2px solid gray;
     float:right;
     }
 
 //TAGS ON TWEETS
 .tags {
-    font-family:"Verdana", sans-serif;
-    font-weight:bold;
-    font-size: 12px;
-    padding: 3px;
-    margin: 10px;
+
 //    border: 1px solid #585858;
     color: white;
 //    background-color:gray;
-    float:right;
+    text-align: right;
+//    margin-top: -15px;
+
+    div {
+        font-family:"Verdana", sans-serif;
+        font-size: 12px;
+        padding: 3px;
+        margin: 3px;
+    }
 }
 
 .tweets {
@@ -129,6 +133,11 @@ h4 {
     color:gray;
     width: 550px;
     border-bottom: 2px solid gray;
+
+    a {
+        margin: 5px 0px 3px;
+        display: block;
+    }
 }
 
 .button {
@@ -139,7 +148,6 @@ h4 {
 
 }
 
-.tags {}
 
 .urls {
 //    color:red;
@@ -150,8 +158,12 @@ a:link, a:visited, a:hover, a:active, a:focus {
 }
 
 
-
-
+.welcome {
+    margin: 20px;
+    font-size:24px;
+    color: #2BA6CB;
+    font-weight:bold;
+}
 
 
 
