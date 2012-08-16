@@ -41,7 +41,8 @@ $(function(){
       nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
       itemSelector : '.box',     // selector for all items you'll retrieve
       animate      : true,
-      debug        : true 
+      debug        : true,
+      loadingText  : "loading..."
     }, 
   
     function( newElements ) {

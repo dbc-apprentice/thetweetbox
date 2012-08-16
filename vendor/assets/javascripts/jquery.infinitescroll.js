@@ -131,10 +131,10 @@
             opts.loading.selector = opts.loading.selector || opts.contentSelector;
 
             // Define loading.msg
-            opts.loading.msg = opts.loading.msg || $('<div id="infscr-loading"><img alt="Loading..." src="' + opts.loading.img + '" /><div>' + opts.loading.msgText + '</div></div>');
+            opts.loading.msg = opts.loading.msg || $('<div id="infscr-loading"><div>' + '</div></div>');
 
             // Preload loading.img
-            (new Image()).src = opts.loading.img;
+            // (new Image()).src = opts.loading.img;
 
             // distance from nav links to bottom
             // computed as: height of the document + top offset of container - top offset of nav link
@@ -420,7 +420,7 @@
             }
 
             opts.loading.msg
-            .find('img')
+              // .find('img')
             .hide()
             .parent()
             .find('div').html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
@@ -517,7 +517,7 @@
                             url: desturl,
                             dataType: opts.dataType,
                             complete: function infscr_ajax_callback(jqXHR, textStatus) {
-                                condition = (typeof (jqXHR.isResolved) !== 'undefined') ? (jqXHR.isResolved()) : (textStatus === "success" || textStatus === "notmodified");
+                                condition = (typeof (jqXHR.isResolved) !== '') ? (jqXHR.isResolved()) : (textStatus === "success" || textStatus === "notmodified");
                                 (condition) ? instance._loadcallback(box, jqXHR.responseText) : instance._error('end');
                             }
                         });
@@ -530,7 +530,7 @@
                             type: 'GET',
                             url: desturl,
                             success: function(data, textStatus, jqXHR) {
-                                condition = (typeof (jqXHR.isResolved) !== 'undefined') ? (jqXHR.isResolved()) : (textStatus === "success" || textStatus === "notmodified");
+                                condition = (typeof (jqXHR.isResolved) !== '') ? (jqXHR.isResolved()) : (textStatus === "success" || textStatus === "notmodified");
                                 if(opts.appendCallback) {
                                     // if appendCallback is true, you must defined template in options. 
                                     // note that data passed into _loadcallback is already an html (after processed in opts.template(data)).
