@@ -34,4 +34,4 @@ group :assets do
   gem 'zurb-foundation', '~> 3.0.1'
 end
 
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails', '3.1.3'
