@@ -4,7 +4,7 @@ gem 'rails', '3.2.7'
 gem 'pg', '0.14.0'
 gem 'omniauth-twitter'
 gem 'twitter_oauth', '~> 0.4.3'
-gem 'haml', '3.1.6'
+gem 'haml', '5.0.0'
 gem 'kaminari'
 
 
