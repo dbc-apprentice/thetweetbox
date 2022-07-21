@@ -190,7 +190,7 @@ GEM
       json (>= 1.1.9)
       mime-types (>= 1.16)
       oauth (>= 0.4.1)
-    tzinfo (0.3.33)
+    tzinfo (0.3.61)
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
